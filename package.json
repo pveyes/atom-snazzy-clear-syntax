@@ -1,0 +1,20 @@
+{
+  "name": "atom-snazzy-clear-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Simple, distraction-free atom syntax based on awesome hyper-snazzy",
+  "keywords": [
+    "syntax",
+    "theme",
+    "snazzy",
+    "clear",
+    "simple",
+    "distraction free",
+    "productivity"
+  ],
+  "repository": "https://github.com/pveyes/atom-snazzy-clear-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
