@@ -1,14 +1,16 @@
 # Atom Snazzy Clear Syntax
 
-Simple, distraction-free atom syntax based on awesome [hyper-snazzy](https://github.com/sindresorhus/hyper-snazzy)
+> Simple, distraction-free atom syntax based on awesome [hyper-snazzy](https://github.com/sindresorhus/hyper-snazzy)
+
+Read the reasoning behind the theme [here](https://fatihkalifa.com/designing-new-syntax-theme-for-atom)
 
 ## Screenshot
 
-- JavaScript
+### JavaScript
 
 ![Atom Snazzy Clear JS Screenshot](https://github.com/pveyes/atom-snazzy-clear-syntax/blob/master/assets/js.png)
 
-- CSS
+### CSS
 
 ![Atom Snazzy Clear CSS Screenshot](https://github.com/pveyes/atom-snazzy-clear-syntax/blob/master/assets/css.png)
 
