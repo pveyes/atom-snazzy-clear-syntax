@@ -222,6 +222,10 @@ atom-text-editor .search-results .marker.current-result .region,
     color: @gray;
   }
 
+  &.separator.key-value {
+    color: lighten(@magenta, 10%);
+  }
+
   &.quasi {
     color: lighten(@orange, 20);
   }
@@ -267,10 +271,9 @@ atom-text-editor .search-results .marker.current-result .region,
     }
   }
 
-  &.section.embedded {
-    color: darken(@red, 10%);
+  &.embedded.jsx {
+    color: lighten(@orange, 20%);
   }
-
 }
 
 .support {
@@ -334,6 +337,11 @@ atom-text-editor .search-results .marker.current-result .region,
   &.gfm {
     color: @cyan;
   }
+}
+
+// Props should be similar to object property
+.JSXAttrs .entity.other.attribute-name {
+  color: @yellow;
 }
 
 .meta {
