@@ -6,11 +6,11 @@ Simple, distraction-free atom syntax based on awesome [hyper-snazzy](https://git
 
 - JavaScript
 
-![Atom Snazzy Clear JS Screenshot](assets/js.png)
+![Atom Snazzy Clear JS Screenshot](https://github.com/pveyes/atom-snazzy-clear-syntax/blob/master/assets/js.png)
 
 - CSS
 
-![Atom Snazzy Clear CSS Screenshot](assets/css.png)
+![Atom Snazzy Clear CSS Screenshot](https://github.com/pveyes/atom-snazzy-clear-syntax/blob/master/assets/css.png)
 
 
 ## Acknowledgement
