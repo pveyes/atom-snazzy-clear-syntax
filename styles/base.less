@@ -334,6 +334,13 @@ atom-text-editor .search-results .marker.current-result .region,
     }
   }
 
+  &.pseudo-element,
+  &.pseudo-class {
+    .punctuation.css {
+      color: lighten(@orange, 20%) !important;
+    }
+  }
+
   &.gfm {
     color: @cyan;
   }
@@ -358,10 +365,6 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.require {
-    color: @blue;
-  }
-
-  &.selector {
     color: @blue;
   }
 
