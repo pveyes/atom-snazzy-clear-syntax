@@ -62,7 +62,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 }
 
 .syntax--comment {
-  color: @dark-gray;
+  color: @gray;
 }
 
 .syntax--keyword {
@@ -181,32 +181,26 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
   &.syntax--json {
     color: @yellow;
-    opacity: 0.8;
 
     .syntax--punctuation.syntax--definition.syntax--string {
       color: @yellow;
     }
   }
 
-  &.syntax--regexp {
-    color: lighten(@orange, 20%);
-
-    .syntax--keyword.syntax--other,
-    .syntax--punctuation.syntax--definition.syntax--string {
-      color: @orange;
-    }
-
-    .syntax--escape {
-      color: lighten(@orange, 10%);
-    }
-
-    .syntax--source.syntax--ruby.syntax--embedded {
-      color: @orange;
-    }
-  }
-
   &.syntax--other.syntax--link {
     color: @red;
+  }
+}
+
+.syntax--regexp {
+  color: lighten(@green, 20%);
+
+  &.syntax--escape.syntax--backslash,
+  &.syntax--constant,
+  &.syntax--quantifier,
+  .syntax--keyword.syntax--other,
+  .syntax--punctuation.syntax--definition.syntax--string {
+    color: lighten(@green, 20%);
   }
 }
 
@@ -217,7 +211,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--class,
   &.syntax--terminator,
   &.syntax--separator {
-    color: @gray;
+    color: @dark-gray;
   }
 
   &.syntax--separator.syntax--key-value {
@@ -229,10 +223,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--definition {
-    &.syntax--comment {
-      color: @dark-gray;
-    }
-
     &.syntax--string {
       color: @green;
     }
@@ -246,7 +236,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     &.syntax--variable,
     &.syntax--parameters,
     &.syntax--array {
-      color: @gray;
+      color: @dark-gray;
     }
 
     &.syntax--tag {
@@ -361,10 +351,11 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
 .syntax--meta {
   &.syntax--brace {
-    color: @gray;
+    color: @dark-gray;
 
-    // Object literals are as important as variables, that's why
+    // Object and array literals are as important as variables, that's why
     // we use the same color for its braces
+    &.syntax--square,
     &.syntax--litobj {
       color: @syntax-text-color;
     }
@@ -400,7 +391,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 }
 
 .syntax--delimiter {
-  color: @gray;
+  color: @dark-gray;
 }
 
 .syntax--none {
@@ -467,7 +458,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 }
 
 .syntax--media.syntax--at-rule {
-  color: @gray;
+  color: @dark-gray;
 
   &.syntax--keyword {
     color: @magenta;
