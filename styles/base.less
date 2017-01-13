@@ -349,9 +349,25 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   color: @yellow;
 }
 
+// Parens for method/function calls should use different color
+// from "normal" parens which only wrap the statement
+.syntax--method-call,
+.syntax--function-call {
+  .syntax--meta.syntax--brace {
+    // Use the same color with the fn/method itself
+    color: @cyan;
+  }
+}
+
 .syntax--meta {
   &.syntax--brace {
     color: @gray;
+
+    // Object literals are as important as variables, that's why
+    // we use the same color for its braces
+    &.syntax--litobj {
+      color: @syntax-text-color;
+    }
   }
 
   &.syntax--class {

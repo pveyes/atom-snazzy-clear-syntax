@@ -8,6 +8,8 @@ Read the reasoning behind the theme [here](https://fatihkalifa.com/designing-new
 
 ### JavaScript
 
+Install [`language-babel`](https://atom.io/packages/language-babel) for better syntax highlighting support.
+
 ![Atom Snazzy Clear JS Screenshot](https://github.com/pveyes/atom-snazzy-clear-syntax/blob/master/assets/js.png)
 
 ### CSS
