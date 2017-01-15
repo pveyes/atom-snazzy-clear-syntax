@@ -62,12 +62,13 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 }
 
 .syntax--comment {
-  color: @gray;
+  color: @gray !important;
 }
 
 .syntax--keyword {
   color: @magenta;
 
+  &.syntax--punctuation,
   &.syntax--control {
     color: @magenta;
   }
@@ -78,6 +79,11 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
   &.syntax--operator {
     color: lighten(@magenta, 10%);
+
+    &.syntax--optional,
+    &.syntax--maybe {
+      color: lighten(@orange, 20%);
+    }
 
     &.syntax--css {
       color: @magenta;
@@ -196,6 +202,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   color: lighten(@green, 20%);
 
   &.syntax--escape.syntax--backslash,
+  &.syntax--control,
   &.syntax--constant,
   &.syntax--quantifier,
   .syntax--keyword.syntax--other,
@@ -205,6 +212,8 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 }
 
 .syntax--punctuation {
+  color: @dark-gray;
+
   &.syntax--json,
   &.syntax--gfm,
   &.syntax--section,
@@ -214,8 +223,9 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: @dark-gray;
   }
 
+  &.syntax--type.syntax--flowtype,
   &.syntax--separator.syntax--key-value {
-    color: lighten(@magenta, 10%);
+    color: lighten(@magenta, 10%) !important;
   }
 
   &.syntax--quasi {
@@ -284,14 +294,17 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
+.syntax--type:not(.syntax--keyword):not(.syntax--storage) {
+  color: @blue;
+}
+
 .syntax--entity {
   &.syntax--name.syntax--accessor,
   &.syntax--name.syntax--function {
     color: @cyan;
   }
   &.syntax--name.syntax--type {
-    color: lighten(@orange, 10%);
-    text-decoration: underline;
+    color: @blue !important;
   }
 
   &.syntax--other.syntax--inherited-class {

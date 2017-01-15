@@ -10,7 +10,12 @@
     "clear",
     "simple",
     "distraction free",
-    "productivity"
+    "productivity",
+    "jsx",
+    "react",
+    "flow",
+    "flowtype",
+    "esnext"
   ],
   "repository": "https://github.com/pveyes/atom-snazzy-clear-syntax",
   "license": "MIT",
