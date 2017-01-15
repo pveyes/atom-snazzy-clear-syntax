@@ -1,7 +1,7 @@
 {
   "name": "atom-snazzy-clear-syntax",
   "theme": "syntax",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Simple, distraction-free atom syntax based on awesome hyper-snazzy",
   "keywords": [
     "syntax",
