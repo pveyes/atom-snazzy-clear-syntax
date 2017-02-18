@@ -28,11 +28,11 @@ Read the reasoning behind the theme [here](https://fatihkalifa.com/designing-new
 
 Install [`language-babel`](https://atom.io/packages/language-babel) for better syntax highlighting support.
 
-![Atom Snazzy Clear JS Screenshot](https://github.com/pveyes/atom-snazzy-clear-syntax/blob/master/assets/js.png)
+![Atom Snazzy Clear JS Screenshot](https://cloud.githubusercontent.com/assets/499192/23095882/0f9d90f4-f612-11e6-926d-70f9bf58c07a.png)
 
 ### CSS
 
-![Atom Snazzy Clear CSS Screenshot](https://github.com/pveyes/atom-snazzy-clear-syntax/blob/master/assets/css.png)
+![Atom Snazzy Clear CSS Screenshot](https://cloud.githubusercontent.com/assets/499192/23095881/0f9cd5ce-f612-11e6-80ce-a19b18370ecc.png)
 
 
 ## Acknowledgement
