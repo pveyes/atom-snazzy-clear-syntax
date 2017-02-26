@@ -181,6 +181,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 .syntax--string {
   color: @green;
 
+  &.syntax--template .syntax--quasi {
+    color: @green;
+  }
+
   &.syntax--unquoted {
     color: @yellow
   }
@@ -229,8 +233,8 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: lighten(@magenta, 10%) !important;
   }
 
-  &.syntax--quasi {
-    color: lighten(@orange, 20);
+  &.syntax--quasi.syntax--element {
+    color: lighten(@magenta, 10%);
   }
 
   &.syntax--definition {
@@ -271,7 +275,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--embedded.syntax--jsx {
-    color: lighten(@orange, 20%);
+    color: lighten(@magenta, 10%);
   }
 }
 
