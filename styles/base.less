@@ -61,7 +61,8 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
-.syntax--comment {
+.syntax--comment,
+.syntax--delimiter {
   color: @gray !important;
 }
 
@@ -217,7 +218,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 }
 
 .syntax--punctuation {
-  color: @dark-gray;
+  color: @gray;
 
   &.syntax--json,
   &.syntax--gfm,
@@ -225,7 +226,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--class,
   &.syntax--terminator,
   &.syntax--separator {
-    color: @dark-gray;
+    color: @gray;
   }
 
   &.syntax--type.syntax--flowtype,
@@ -367,7 +368,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
 .syntax--meta {
   &.syntax--brace {
-    color: @dark-gray;
+    color: @gray;
 
     // Object and array literals are as important as variables, that's why
     // we use the same color for its braces
@@ -380,7 +381,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     // to differentiate from array literal
     &.syntax--open,
     &.syntax--end, {
-      color: @dark-gray;
+      color: @gray;
     }
   }
 
@@ -411,10 +412,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
       }
     }
   }
-}
-
-.syntax--delimiter {
-  color: @dark-gray;
 }
 
 .syntax--none {
