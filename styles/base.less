@@ -299,6 +299,14 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   color: @blue;
 }
 
+.syntax--type {
+  &.syntax--console,
+  &.syntax--dom,
+  &.syntax--node {
+    color: lighten(@orange, 20%) !important;
+  }
+}
+
 .syntax--entity {
   &.syntax--name.syntax--accessor,
   &.syntax--name.syntax--function {
