@@ -334,11 +334,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
   &.syntax--name.syntax--tag {
     color: @red;
-
-    &.syntax--yaml {
-      color: @yellow;
-      opacity: 0.8;
-    }
   }
 
   &.syntax--other.syntax--attribute-name {
@@ -493,6 +488,22 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   .syntax--keyword.syntax--other.syntax--unit,
   .syntax--constant {
     color: @orange;
+  }
+}
+
+.syntax--yaml {
+  &.syntax--punctuation {
+    // Punctuations in yaml have an actual meaning so we use the same color
+    // with operator color like :
+    color: lighten(@magenta, 10%);
+  }
+
+  &.syntax--tag.syntax--entity {
+    color: @yellow;
+  }
+
+  &.syntax--string.syntax--unquoted {
+    color: @green;
   }
 }
 
