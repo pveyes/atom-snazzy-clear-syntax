@@ -507,6 +507,13 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
+.syntax--quasi {
+  // Tagged template literals is similar with function call
+  .syntax--entity.syntax--tag.syntax--name {
+    color: @cyan;
+  }
+}
+
 atom-text-editor[mini] .scroll-view {
   padding-left: 1px;
 }
