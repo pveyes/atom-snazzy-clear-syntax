@@ -115,10 +115,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 .syntax--constant {
   color: @orange;
 
-  &.syntax--character.syntax--escape {
-    color: @cyan;
-  }
-
   &.syntax--numeric {
     color: @orange;
   }
@@ -182,6 +178,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 .syntax--string {
   color: @green;
 
+  .syntax--constant.syntax--character.syntax--escape {
+    color: lighten(@green, 20%);
+  }
+
   &.syntax--template .syntax--quasi {
     color: @green;
   }
@@ -208,6 +208,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 .syntax--regexp {
   color: lighten(@green, 20%);
 
+  &.syntax--keyword.syntax--operator,
   &.syntax--punctuation,
   &.syntax--escape.syntax--backslash,
   &.syntax--control,
