@@ -190,16 +190,18 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: @yellow
   }
 
-  &.syntax--json {
-    color: @yellow;
-
-    .syntax--punctuation.syntax--definition.syntax--string {
-      color: @yellow;
-    }
-  }
-
   &.syntax--other.syntax--link {
     color: @red;
+  }
+}
+
+&.syntax--json {
+  color: @yellow;
+
+  .syntax--entity.syntax--name.syntax--accessor,
+  .syntax--entity.syntax--name.syntax--function,
+  .syntax--punctuation.syntax--definition.syntax--string {
+    color: @yellow;
   }
 }
 
