@@ -1,0 +1,23 @@
+/* CSS Example */
+html, body {
+  font-family: 'Lucida Grande', Verdana, sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+#ul li {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.link {
+  color: var(--link-color);
+  background-image: url(../../sampah.jpg);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.link:hover {
+  color: var(--link-color-active);
+}

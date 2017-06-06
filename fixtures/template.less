@@ -1,0 +1,29 @@
+// LESS Example
+@import 'mixins';
+
+@foreground-color: #333;
+@background-color: hsl(30, 100%, 96%);
+
+html {
+  font-family: 'Lucida Grande', Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: @foreground-color;
+  background-color: @background-color;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 400;
+
+  &:hover {
+    color: var(--link-color-active);
+  }
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ddd;
+}

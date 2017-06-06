@@ -61,6 +61,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
+
 .syntax--comment,
 .syntax--delimiter {
   color: @gray !important;
@@ -78,61 +82,20 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: @red;
   }
 
-  &.syntax--operator {
-    color: lighten(@magenta, 10%);
-
-    &.syntax--optional,
-    &.syntax--maybe {
-      color: lighten(@orange, 20%);
-    }
-
-    &.syntax--css {
-      color: @magenta;
-    }
-  }
-
   &.syntax--other.syntax--special-method {
     color: @cyan;
-  }
-
-  &.syntax--other.syntax--unit {
-    color: @orange;
-
-    &.syntax--css {
-      color: @syntax-text-color;
-    }
-  }
-}
-
-.syntax--storage {
-  color: @magenta;
-
-  &.syntax--function.syntax--arrow {
-    color: lighten(@magenta, 10%);
   }
 }
 
 .syntax--constant {
   color: @orange;
 
-  &.syntax--numeric {
-    color: @orange;
-  }
-
   &.syntax--other.syntax--color {
     color: @cyan;
-
-    &.syntax--css {
-      color: @syntax-text-color;
-    }
   }
 
   &.syntax--other.syntax--symbol {
     color: @green;
-  }
-
-  &.syntax--css {
-    color: @syntax-text-color;
   }
 }
 
@@ -147,13 +110,13 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: @syntax-text-color;
   }
 
-  &.syntax--shorthandpropertyname {
-    color: @yellow;
-  }
-
   &.syntax--constant {
     color: @orange;
   }
+}
+
+.syntax--function {
+  color: @cyan;
 }
 
 .syntax--invalid.syntax--illegal {
@@ -224,17 +187,11 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   color: @gray;
 
   &.syntax--json,
-  &.syntax--gfm,
   &.syntax--section,
   &.syntax--class,
   &.syntax--terminator,
   &.syntax--separator {
     color: @gray;
-  }
-
-  &.syntax--type.syntax--flowtype,
-  &.syntax--separator.syntax--key-value {
-    color: lighten(@magenta, 10%) !important;
   }
 
   &.syntax--quasi.syntax--element {
@@ -244,12 +201,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--definition {
     &.syntax--string {
       color: @green;
-    }
-
-    &.syntax--entity {
-      &.syntax--css {
-        color: @blue;
-      }
     }
 
     &.syntax--variable,
@@ -283,41 +234,12 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
-.syntax--support {
-  &.syntax--property-name {
-    color: @yellow !important;
-  }
-
-  &.syntax--class.syntax--builtin,
-  &.syntax--media.syntax--css,
-  &.syntax--object {
-    color: lighten(@orange, 20%);
-  }
-
-  &.syntax--function  {
-    color: @cyan;
-
-    &.syntax--any-method {
-      color: @blue;
-    }
-  }
-}
-
-.syntax--type:not(.syntax--keyword):not(.syntax--storage) {
+.syntax--type {
   color: @blue;
 }
 
-.syntax--type {
-  &.syntax--console,
-  &.syntax--dom,
-  &.syntax--node {
-    color: lighten(@orange, 20%) !important;
-  }
-}
-
 .syntax--entity {
-  &.syntax--name.syntax--accessor,
-  &.syntax--name.syntax--function {
+  &.syntax--name.syntax--accessor {
     color: @cyan;
   }
   &.syntax--name.syntax--type {
@@ -338,30 +260,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--name.syntax--tag {
     color: @red;
   }
-
-  &.syntax--other.syntax--attribute-name {
-    color: lighten(@orange, 20%);
-
-    &.syntax--id {
-      color: @blue;
-    }
-  }
-
-  &.syntax--pseudo-element,
-  &.syntax--pseudo-class {
-    .syntax--punctuation.syntax--css {
-      color: lighten(@orange, 20%) !important;
-    }
-  }
-
-  &.syntax--gfm {
-    color: @cyan;
-  }
-}
-
-// Props should be similar to object property
-.syntax--JSXAttrs .syntax--entity.syntax--other.syntax--attribute-name {
-  color: @yellow;
 }
 
 .syntax--meta {
@@ -454,46 +352,143 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--raw.syntax--inline {
     color: @green;
   }
+}
 
-  &.syntax--link.syntax--gfm {
-    color: lighten(@yellow, 10%);
+// JavaScript specific syntax
+.syntax--js {
+  .syntax--support {
+    color: @syntax-text-color;
+  }
+
+  .syntax--function,
+  // Native class instantiation
+  .syntax--keyword + .syntax--class,
+  // Class method
+  .syntax--function.syntax--any-method,
+  // Tagged template literals
+  .syntax--quasi .syntax--entity.syntax--tag.syntax--name {
+    color: @cyan;
+  }
+
+  .syntax--storage {
+    color: @magenta;
+  }
+
+  .syntax--jsx .syntax--component {
+    color: @red;
+  }
+
+  // JSX props, object property should have same color
+  .syntax--shorthandpropertyname,
+  .syntax--JSXAttrs .syntax--entity.syntax--other.syntax--attribute-name {
+    color: @yellow;
+  }
+
+  // JSX String literal
+  .syntax--JSXNested {
+    color: @green;
+  }
+
+  .syntax--flowtype {
+    &.syntax--type {
+      color: @blue;
+    }
+
+    &.syntax--punctuation {
+      color: @gray;
+    }
+  }
+
+  // Flow object property with function value
+  .syntax--storage.syntax--type.syntax--function:not(.syntax--arrow) {
+    color: @syntax-text-color;
   }
 }
 
-.syntax--source.syntax--gfm .syntax--markup {
-  -webkit-font-smoothing: auto;
-  &.syntax--heading {
+@media (max-width: 60px) and (height: 100vh) {
+
+}
+
+// CSS Specific syntax
+.syntax--css {
+  .syntax--variable {
+    color: lighten(@magenta, 10%);
+  }
+
+  .syntax--property-name {
+    color: @syntax-text-color;
+  }
+
+  .syntax--unit,
+  .syntax--parameter,
+  .syntax--property-value .syntax--constant,
+  .syntax--property-value .syntax--string {
+    color: @orange;
+  }
+
+  &.syntax--punctuation.syntax--entity {
     color: @blue;
   }
+
+  .syntax--pseudo-class,
+  .syntax--pseudo-element,
+  .syntax--pseudo-class .syntax--punctuation,
+  .syntax--pseudo-element .syntax--punctuation {
+    color: @yellow;
+  }
+
+  .syntax--media.syntax--at-rule {
+    color: @dark-gray;
+
+    &.syntax--keyword {
+      color: @magenta;
+    }
+  }
+
+  .syntax--attribute-selector
+  .syntax--attribute-selector .syntax--entity {
+    color: @yellow;
+  }
+
+  .syntax--id,
+  .syntax--id .syntax--punctuation {
+    color: @red;
+  }
 }
 
-.syntax--html.syntax--doctype {
-  color: @magenta;
-}
-
-.syntax--JSXNested {
-  color: @green;
-}
-
-.syntax--media.syntax--at-rule {
-  color: @dark-gray;
-
-  &.syntax--keyword {
+// HTML Specific syntax
+.syntax--html {
+  &.syntax--doctype {
     color: @magenta;
   }
 }
 
+// LESS specific syntax
 .syntax--less {
-  .syntax--support {
-    color: @cyan;
-  }
-
-  .syntax--keyword.syntax--other.syntax--unit,
-  .syntax--constant {
-    color: @orange;
+  .syntax--parent-selector .syntax--punctuation {
+    color: @yellow;
   }
 }
 
+// Markdown specific syntax
+.syntax--gfm {
+  .syntax--markup {
+    -webkit-font-smoothing: auto;
+
+    &.syntax--heading {
+      color: @blue;
+    }
+  }
+}
+
+// Go specific syntax
+.syntax--go {
+  .syntax--keyword {
+    color: @magenta;
+  }
+}
+
+// YAML Specific syntax
 .syntax--yaml {
   &.syntax--punctuation {
     // Punctuations in yaml have an actual meaning so we use the same color
@@ -510,13 +505,18 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 }
 
-.syntax--quasi {
-  // Tagged template literals is similar with function call
-  .syntax--entity.syntax--tag.syntax--name {
-    color: @cyan;
+// Shell specific syntax, emulate hyper-snazzy color if possible
+.syntax--shell {
+  .syntax--function {
+    color: @green;
   }
-}
 
-atom-text-editor[mini] .scroll-view {
-  padding-left: 1px;
+  .syntax--keyword {
+    color: @syntax-text-color;
+  }
+
+  .syntax--punctuation.syntax--string,
+  .syntax--string {
+    color: @yellow;
+  }
 }
