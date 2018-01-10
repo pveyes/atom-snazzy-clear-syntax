@@ -1,5 +1,7 @@
 # Atom Snazzy Clear Syntax
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pveyes/atom-snazzy-clear-syntax.svg)](https://greenkeeper.io/)
+
 > Simple, distraction-free atom syntax based on awesome [hyper-snazzy](https://github.com/sindresorhus/hyper-snazzy)
 
 Read the reasoning behind the theme [here](https://fatihkalifa.com/designing-new-syntax-theme-for-atom)
